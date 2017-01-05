@@ -1,0 +1,10 @@
+docker rm -f sample_web_server
+docker run \
+    --rm \
+    -it \
+    --volume `pwd`/app.psgi:/app/app.psgi \
+    --volume `pwd`/cmd:/app/cmd \
+    --publish 80:80 \
+    --name sample_web_server \
+    sample_web_server \
+    bash
